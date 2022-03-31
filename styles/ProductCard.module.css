@@ -1,0 +1,77 @@
+.container {
+    height: 30rem;
+    width: 21rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border:1px solid gray;
+    padding:0.5rem;
+    margin-bottom: 2rem;
+}
+.productImage{
+    height:44rem;
+    width:100%;
+    position: relative;
+}
+.productTitle{
+    font-size: 1.3rem;
+    font-weight: 500;
+    width:100%;
+    text-align: center;
+    margin-top: 1rem;
+
+}
+
+.productPrice{
+    font-size: 1.5rem;
+    font-weight: 500;
+    width:100%;
+    text-align: center;
+    margin-top: 0.5rem;
+    letter-spacing: 2px;
+
+}
+.productBtn{
+    font-family: 'Dosis', sans-serif;
+    font-weight: 200;
+    padding:0.3rem;
+    letter-spacing: 1px;
+    font-size:1.36rem;
+    border:none;
+    color:white;
+    background:black;
+    margin-top:0.4rem;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.productBtn:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+@media (max-width: 864px) {
+    .container {
+        height: 28rem;
+        width: 17rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border:1px solid gray;
+        padding:0.5rem;
+        margin-bottom: 2rem;
+    }
+}
+@media (max-width: 444px) {
+    .productTitle{
+        font-size: 1.1rem;    
+    }
+    
+    .productPrice{
+        font-size: 1.3rem;
+    
+    }
+    .productBtn{
+        font-size:1.26rem;
+    }
+}

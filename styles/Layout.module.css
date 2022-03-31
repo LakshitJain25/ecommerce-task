@@ -1,0 +1,265 @@
+/* .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+} */
+
+.header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    height: min-content;
+    position: fixed;
+    background: #ffffff;
+    box-shadow: 0px 6px 7px -1px rgba(0, 0, 0, 0.18);
+    z-index: 30;
+}
+
+.header .logo {
+    grid-column: 2/5;
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.header .logo {
+    grid-column: 2/5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.header .navbar {
+    grid-column: 8/12;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.header .navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center     ;
+    width: 100%;
+    font-size: 1.4em;
+}
+
+.header .navbar ul li {
+    cursor: pointer;
+    position: relative;
+    transition: ease 0.5s;
+}
+.header .navbar ul li:hover {
+    color: white;
+}
+.header .navbar ul li:hover::before {
+    content: "";
+    position: absolute;
+    background-color: black;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    animation: fadeInLeft 0.4s ease;
+}
+
+.header .navbar ul li:hover::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    animation: fadeInRight 0.4s ease;
+}
+
+.footer {
+    width: 100%;
+    height: min-content;
+    background: black;
+    color: white;
+    padding:1.3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons{
+    width: 40%;
+    display:flex;
+    font-size:1.7rem;
+    justify-content: space-evenly;
+    align-items: center;
+    color:black;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:white;
+    height:3rem;
+    width:3rem;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.icon:hover{
+    border:1px solid white;
+    background: black;
+    color:white;
+}
+.footerText{
+    margin-top: 0.5rem;
+    margin-bottom:0.5rem;
+    color:white;
+    font-size: 1.1rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+.trademark{
+    font-size:1rem;
+    color:rgba(255, 255, 255, 0.425);
+    letter-spacing: 1px;
+}
+
+@media (max-width: 664px) {
+    .icons{
+        width: 50%;
+        display:flex;
+        font-size:1.42rem;
+        justify-content: space-evenly;
+        align-items: center;
+        color:black;
+    }
+    
+    .icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:white;
+        height:2.5rem;
+        width:2.5rem;
+        border-radius: 50%;
+    }
+    .header .navbar {
+        height: 17rem;
+        width: 17rem;
+        transition: 0.4s ease;
+    }
+
+    .header .navbar ul {
+        
+        font-size: 1.3rem;
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        transform: translateX(-10rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0rem);
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        transform: translateX(10rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0rem);
+        opacity: 100%;
+    }
+}
+
+.hamburgerButton {
+    display: none;
+}
+.main {
+    height: min-content;
+    width: 100%;
+    padding-top: 46.4px;
+}
+@media (max-width: 1024px) {
+    .hamburgerButton {
+        display: initial;
+        grid-column: 8/12;
+        display: flex;
+        justify-content: flex-end;
+        /* align-items: center; */
+        height: 100%;
+        width: 100%;
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
+    .header .navbar {
+        position: absolute;
+        grid-column: 8/12;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 30rem;
+        width: 30rem;
+        background-image: url('../public/shoppingbag.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        top: 0%;
+        left: 0;
+        transform: translateY(-155%) translateX(-56%);
+        /* transform: translateY(15%) translateX(-66%); */
+        transition: 0.4s ease;
+    }
+
+    .header .navbar ul {
+        
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color:white;
+        margin-top:5rem;
+        width: 100%;
+        height:50%;
+        flex-direction: column;
+        font-size: 1.8rem;
+    }
+    
+    .header .navbar ul li {
+        cursor: pointer;
+        position: relative;
+        transition: ease 0.5s;
+    }
+    .burger {
+        display: flex;
+        align-items: center;
+        animation: loadAnimation 0.22s ease-out;
+    }
+    .closeBtn {
+        font-size: 2rem;
+        animation: loadAnimation 0.22s ease-in;
+    }
+
+    @keyframes loadAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 100%;
+        }
+    }
+}
+

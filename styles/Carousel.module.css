@@ -1,0 +1,24 @@
+.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    animation: fade 0.5s ease-in;
+    
+}
+.backgroundImage {
+    margin-top:3rem;
+    height: 80%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes fade{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
